@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from bakery import assert_equal
 
 set_website_title("Football Score Counter")
-set_site_information("Anthony Nash","This website is intended to be an online score counter for American football games","National Football League","","",None)
+set_site_information("Anthony Nash","This website is intended to be an online score counter for American football games","National Football League, Drafter, ChatGPT","","",None)
 
 @dataclass
 class Team:
