@@ -7,7 +7,7 @@ set_site_information(
     "Anthony Nash",
     "This website is intended to be an online score counter for American football games",
     "National Football League, Drafter, ChatGPT","","",None)
-set_website_favicon("nfl-logo.png")
+set_website_favicon("nfl_logo.png")
 
 @dataclass
 class Team:
