@@ -502,7 +502,7 @@ def afc_south(state: State) -> Page:
 
 @route
 def jaguars(state: State) -> Page:
-     '''
+    '''
     sets state away team variable to user's selected team;
     returns home team selection page
     '''
@@ -512,7 +512,7 @@ def jaguars(state: State) -> Page:
 
 @route
 def texans(state: State) -> Page:
-     '''
+    '''
     sets state away team variable to user's selected team;
     returns home team selection page
     '''
@@ -532,7 +532,7 @@ def titans(state: State) -> Page:
 
 @route
 def colts(state: State) -> Page:
-     '''
+    '''
     sets state away team variable to user's selected team;
     returns home team selection page
     '''
@@ -558,7 +558,7 @@ def afc_west(state: State) -> Page:
 
 @route
 def broncos(state: State) -> Page:
-     '''
+    '''
     sets state away team variable to user's selected team;
     returns home team selection page
     '''
@@ -578,7 +578,7 @@ def chiefs(state: State) -> Page:
 
 @route
 def raiders(state: State) -> Page:
-     '''
+    '''
     sets state away team variable to user's selected team;
     returns home team selection page
     '''
@@ -588,7 +588,7 @@ def raiders(state: State) -> Page:
 
 @route
 def chargers(state: State) -> Page:
-     '''
+    '''
     sets state away team variable to user's selected team;
     returns home team selection page
     '''
@@ -634,7 +634,7 @@ def steelers(state: State) -> Page:
 
 @route
 def browns(state: State) -> Page:
-     '''
+    '''
     sets state away team variable to user's selected team;
     returns home team selection page
     '''
