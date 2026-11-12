@@ -37,7 +37,7 @@ class State:
 @route
 def index(state: State) -> Page:
     '''
-    the homepage;
+    the homepage, with a welcome message;
     takes user's press of button and returns the away team selection page
     '''
     return Page(state,[
@@ -59,8 +59,8 @@ assert_equal(index(State(Team("",""),Team("",""),0,0,0,0,0,0,0,0,0,0,0,0,0,0,Tea
 @route
 def away_team_selection(state: State) -> Page:
     '''
-    resets all variables to 0,
-    presents user with all 8 divisions to select away team, plus custom button;
+    resets all variables to 0;
+    presents user with all 8 divisions to select away team from, plus custom team button;
     user's press of button returns a division page
     '''
     state.home_score = 0
@@ -98,7 +98,7 @@ def away_team_selection(state: State) -> Page:
 @route
 def home_team_selection(state: State) -> Page:
     '''
-    presents user with all 8 divsions and custom button to pick home team;
+    presents user with all 8 divsions and custom button to pick home team from;
     takes user's press of button and returns a division page
     '''
     return Page(state, [
@@ -200,7 +200,7 @@ def custom_home_submit(state: State, customhome: str, homecolor: str) -> Page:
 @route
 def back(state: State) -> Page:
     '''
-    lets user exit a division's page, returning them to division selection page
+    lets user exit a division's page, returning them to the away team division selection page
     '''
     return away_team_selection(state)
 
@@ -223,7 +223,8 @@ def nfc_east(state: State) -> Page:
 @route
 def eagles(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Eagles"
     state.away_team.color = "#004953"
@@ -232,7 +233,8 @@ def eagles(state: State) -> Page:
 @route
 def cowboys(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Cowboys"
     state.away_team.color = "#003594"
@@ -241,7 +243,8 @@ def cowboys(state: State) -> Page:
 @route
 def giants(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Giants"
     state.away_team.color = "#0b2265"
@@ -250,7 +253,8 @@ def giants(state: State) -> Page:
 @route
 def commanders(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Commanders"
     state.away_team.color = "#5a1414"
@@ -275,7 +279,8 @@ def nfc_south(state: State) -> Page:
 @route
 def panthers(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Panthers"
     state.away_team.color = "#0085ca"
@@ -284,7 +289,8 @@ def panthers(state: State) -> Page:
 @route
 def falcons(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Falcons"
     state.away_team.color = "#a71930"
@@ -293,7 +299,8 @@ def falcons(state: State) -> Page:
 @route
 def saints(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Saints"
     state.away_team.color = "#d3bc8d"
@@ -302,7 +309,8 @@ def saints(state: State) -> Page:
 @route
 def buccaneers(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Buccaneers"
     state.away_team.color = "#d50a0a"
@@ -327,7 +335,8 @@ def nfc_west(state: State) -> Page:
 @route
 def rams(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Rams"
     state.away_team.color = "#003594"
@@ -336,7 +345,8 @@ def rams(state: State) -> Page:
 @route
 def seahawks(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Seahawks"
     state.away_team.color = "#69be28"
@@ -345,7 +355,8 @@ def seahawks(state: State) -> Page:
 @route
 def fortyniners(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Forty-Niners"
     state.away_team.color = "#b3995d"
@@ -354,7 +365,8 @@ def fortyniners(state: State) -> Page:
 @route
 def cardinals(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Cardinals"
     state.away_team.color = "#97233f"
@@ -379,7 +391,8 @@ def nfc_north(state: State) -> Page:
 @route
 def lions(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Lions"
     state.away_team.color = "#0076b6"
@@ -388,7 +401,8 @@ def lions(state: State) -> Page:
 @route
 def packers(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Packers"
     state.away_team.color = "#203731"
@@ -397,7 +411,8 @@ def packers(state: State) -> Page:
 @route
 def bears(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Bears"
     state.away_team.color = "#c83803"
@@ -406,7 +421,8 @@ def bears(state: State) -> Page:
 @route
 def vikings(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Vikings"
     state.away_team.color = "#4f2683"
@@ -431,7 +447,8 @@ def afc_east(state: State) -> Page:
 @route
 def patriots(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Patriots"
     state.away_team.color = "#002244"
@@ -440,7 +457,8 @@ def patriots(state: State) -> Page:
 @route
 def bills(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Bills"
     state.away_team.color = "#c60c30"
@@ -449,7 +467,8 @@ def bills(state: State) -> Page:
 @route
 def jets(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Jets"
     state.away_team.color = "#125740"
@@ -458,7 +477,8 @@ def jets(state: State) -> Page:
 @route
 def dolphins(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Dolphins"
     state.away_team.color = "#008e97"
@@ -482,8 +502,9 @@ def afc_south(state: State) -> Page:
 
 @route
 def jaguars(state: State) -> Page:
-    '''
-    sets state team variable to user's selected team
+     '''
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Jaguars"
     state.away_team.color = "#006778"
@@ -491,8 +512,9 @@ def jaguars(state: State) -> Page:
 
 @route
 def texans(state: State) -> Page:
-    '''
-    sets state team variable to user's selected team
+     '''
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Texans"
     state.away_team.color = "#03202f"
@@ -501,7 +523,8 @@ def texans(state: State) -> Page:
 @route
 def titans(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Titans"
     state.away_team.color = "#4b92db"
@@ -509,8 +532,9 @@ def titans(state: State) -> Page:
 
 @route
 def colts(state: State) -> Page:
-    '''
-    sets state team variable to user's selected team
+     '''
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Colts"
     state.away_team.color = "#002c5f"
@@ -534,8 +558,9 @@ def afc_west(state: State) -> Page:
 
 @route
 def broncos(state: State) -> Page:
-    '''
-    sets state team variable to user's selected team
+     '''
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Broncos"
     state.away_team.color = "#fb1414"
@@ -544,7 +569,8 @@ def broncos(state: State) -> Page:
 @route
 def chiefs(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Chiefs"
     state.away_team.color = "#e31837"
@@ -552,8 +578,9 @@ def chiefs(state: State) -> Page:
 
 @route
 def raiders(state: State) -> Page:
-    '''
-    sets state team variable to user's selected team
+     '''
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Raiders"
     state.away_team.color = "#a5acaf"
@@ -561,8 +588,9 @@ def raiders(state: State) -> Page:
 
 @route
 def chargers(state: State) -> Page:
-    '''
-    sets state team variable to user's selected team
+     '''
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Chargers"
     state.away_team.color = "#0080c6"
@@ -587,7 +615,8 @@ def afc_north(state: State) -> Page:
 @route
 def ravens(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Ravens"
     state.away_team.color = "#241773"
@@ -596,7 +625,8 @@ def ravens(state: State) -> Page:
 @route
 def steelers(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Steelers"
     state.away_team.color = "#ffb612"
@@ -604,8 +634,9 @@ def steelers(state: State) -> Page:
 
 @route
 def browns(state: State) -> Page:
-    '''
-    sets state team variable to user's selected team
+     '''
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Browns"
     state.away_team.color = "#331d00"
@@ -614,7 +645,8 @@ def browns(state: State) -> Page:
 @route
 def bengals(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state away team variable to user's selected team;
+    returns home team selection page
     '''
     state.away_team.name = "Bengals"
     state.away_team.color = "#fb1414"
@@ -622,6 +654,9 @@ def bengals(state: State) -> Page:
 
 @route
 def back2(state: State) -> Page:
+    '''
+    allows user to return to the home team division selection page when on a division page
+    '''
     return home_team_selection(state)
 
 @route
@@ -643,7 +678,8 @@ def nfc_east2(state: State) -> Page:
 @route
 def eagles2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Eagles"
     state.home_team.color = "#004953"
@@ -652,7 +688,8 @@ def eagles2(state: State) -> Page:
 @route
 def cowboys2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Cowboys"
     state.home_team.color = "#003594"
@@ -661,7 +698,8 @@ def cowboys2(state: State) -> Page:
 @route
 def giants2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Giants"
     state.home_team.color = "#0b2265"
@@ -670,7 +708,8 @@ def giants2(state: State) -> Page:
 @route
 def commanders2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Commanders"
     state.home_team.color = "#5a1414"
@@ -695,7 +734,8 @@ def nfc_south2(state: State) -> Page:
 @route
 def panthers2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Panthers"
     state.home_team.color = "#0085ca"
@@ -704,7 +744,8 @@ def panthers2(state: State) -> Page:
 @route
 def falcons2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Falcons"
     state.home_team.color = "#a71930"
@@ -713,7 +754,8 @@ def falcons2(state: State) -> Page:
 @route
 def saints2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Saints"
     state.home_team.color = "#d3bc8d"
@@ -722,7 +764,8 @@ def saints2(state: State) -> Page:
 @route
 def buccaneers2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Buccaneers"
     state.home_team.color = "#d50a0a"
@@ -747,7 +790,8 @@ def nfc_west2(state: State) -> Page:
 @route
 def rams2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Rams"
     state.home_team.color = "#003594"
@@ -756,7 +800,8 @@ def rams2(state: State) -> Page:
 @route
 def seahawks2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Seahawks"
     state.home_team.color = "#69be28"
@@ -765,7 +810,8 @@ def seahawks2(state: State) -> Page:
 @route
 def fortyniners2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Forty-Niners"
     state.home_team.color = "#b3995d"
@@ -774,7 +820,8 @@ def fortyniners2(state: State) -> Page:
 @route
 def cardinals2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Cardinals"
     state.home_team.color = "#97233f"
@@ -799,7 +846,8 @@ def nfc_north2(state: State) -> Page:
 @route
 def lions2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Lions"
     state.home_team.color = "#0076b6"
@@ -808,7 +856,8 @@ def lions2(state: State) -> Page:
 @route
 def packers2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Packers"
     state.home_team.color = "#203731"
@@ -817,7 +866,8 @@ def packers2(state: State) -> Page:
 @route
 def bears2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Bears"
     state.home_team.color = "#c83803"
@@ -826,7 +876,8 @@ def bears2(state: State) -> Page:
 @route
 def vikings2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Vikings"
     state.home_team.color = "#4f2683"
@@ -851,7 +902,8 @@ def afc_east2(state: State) -> Page:
 @route
 def patriots2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Patriots"
     state.home_team.color = "#002244"
@@ -860,7 +912,8 @@ def patriots2(state: State) -> Page:
 @route
 def bills2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Bills"
     state.home_team.color = "#c60c30"
@@ -869,7 +922,8 @@ def bills2(state: State) -> Page:
 @route
 def jets2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Jets"
     state.home_team.color = "#125740"
@@ -878,7 +932,8 @@ def jets2(state: State) -> Page:
 @route
 def dolphins2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Dolphins"
     state.home_team.color = "#008e97"
@@ -903,7 +958,8 @@ def afc_south2(state: State) -> Page:
 @route
 def jaguars2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Jaguars"
     state.home_team.color = "#006778"
@@ -912,7 +968,8 @@ def jaguars2(state: State) -> Page:
 @route
 def texans2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Texans"
     state.home_team.color = "#03202f"
@@ -921,7 +978,8 @@ def texans2(state: State) -> Page:
 @route
 def titans2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Titans"
     state.home_team.color = "#4b92db"
@@ -930,7 +988,8 @@ def titans2(state: State) -> Page:
 @route
 def colts2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Colts"
     state.home_team.color = "#002c5f"
@@ -955,7 +1014,8 @@ def afc_west2(state: State) -> Page:
 @route
 def broncos2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Broncos"
     state.home_team.color = "#fb1414"
@@ -964,7 +1024,8 @@ def broncos2(state: State) -> Page:
 @route
 def chiefs2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Chiefs"
     state.home_team.color = "#e31837"
@@ -973,7 +1034,8 @@ def chiefs2(state: State) -> Page:
 @route
 def raiders2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Raiders"
     state.home_team.color = "#a5acaf"
@@ -982,7 +1044,8 @@ def raiders2(state: State) -> Page:
 @route
 def chargers2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Chargers"
     state.home_team.color = "#0080c6"
@@ -1007,7 +1070,8 @@ def afc_north2(state: State) -> Page:
 @route
 def ravens2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Ravens"
     state.home_team.color = "#241773"
@@ -1016,7 +1080,8 @@ def ravens2(state: State) -> Page:
 @route
 def steelers2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Steelers"
     state.home_team.color = "#ffb612"
@@ -1025,7 +1090,8 @@ def steelers2(state: State) -> Page:
 @route
 def browns2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Browns"
     state.home_team.color = "#331d00"
@@ -1034,7 +1100,8 @@ def browns2(state: State) -> Page:
 @route
 def bengals2(state: State) -> Page:
     '''
-    sets state team variable to user's selected team
+    sets state home team variable to user's selected team;
+    returns cointoss selection page
     '''
     state.home_team.name = "Bengals"
     state.home_team.color = "#fb1414"
@@ -1044,7 +1111,7 @@ def bengals2(state: State) -> Page:
 def cointoss(state: State) -> Page:
     '''
     lets user input which team starts with the ball for the game they are scorekeeping;
-    returns the scorekeeping page for whatever team is first
+    returns away_team_starts or home_team_starts, both saving the selected team so that the 2nd half can start with the other team
     '''
     return Page(state, [
         "Select the team that starts with the ball: ","\n",
@@ -1073,7 +1140,8 @@ def home_team_starts(state: State) -> Page:
 @route
 def away_scorekeeper(state: State) -> Page:
     '''
-    allows user to update points for the away team in the 1st half
+    allows user to update points for the away team in the 1st half;
+    either returns functions that update points or display halftime
     '''
     return Page(state, [
         "Current score: ", state.away_team.name, str(state.away_score), "-", str(state.home_score), state.home_team.name, "\n",
@@ -1089,7 +1157,8 @@ def away_scorekeeper(state: State) -> Page:
 @route
 def home_scorekeeper(state: State) -> Page:
     '''
-    allows user to update points for the home team in the 1st half
+    allows user to update points for the home team in the 1st half;
+    either returns functions that update points or display halftime
     '''
     return Page(state, [
         "Current score: ", state.away_team.name, str(state.away_score), "-", str(state.home_score), state.home_team.name, "\n",
@@ -1105,7 +1174,8 @@ def home_scorekeeper(state: State) -> Page:
 @route
 def away_scorekeeper_2(state: State) -> Page:
     '''
-    allows user to update points for the away team in the 2nd half
+    allows user to update points for the away team in the 2nd half;
+    either returns functions that update points, display end screen, or overtime page
     '''
     return Page(state, [
         "Current score: ", state.away_team.name, str(state.away_score), "-", str(state.home_score), state.home_team.name, "\n",
@@ -1121,7 +1191,8 @@ def away_scorekeeper_2(state: State) -> Page:
 @route
 def home_scorekeeper_2(state: State) -> Page:
     '''
-    allows user to update points for the home team in the 2nd half
+    allows user to update points for the home team in the 2nd half;
+    either returns functions that update points, display end screen, or overtime page
     '''
     return Page(state, [
         "Current score: ", state.away_team.name, str(state.away_score), "-", str(state.home_score), state.home_team.name, "\n",
@@ -1137,7 +1208,9 @@ def home_scorekeeper_2(state: State) -> Page:
 @route
 def away_touchdown(state: State) -> Page:
     '''
-    adds 6 to the away team's points
+    adds 6 to the away team's points;
+    allows user to choose the touchdown conversion's result;
+    returns function updating conversion data
     '''
     state.away_score = state.away_score + 6
     return Page(state, [
@@ -1150,7 +1223,9 @@ def away_touchdown(state: State) -> Page:
 @route
 def home_touchdown(state: State) -> Page:
     '''
-    adds 6 to the home team's points
+    adds 6 to the home team's points;
+    allows user to choose the touchdown conversion's result;
+    returns function updating conversion data
     '''
     state.home_score = state.home_score + 6
     return Page(state, [
@@ -1163,7 +1238,9 @@ def home_touchdown(state: State) -> Page:
 @route
 def away_touchdown_2(state: State) -> Page:
     '''
-    adds 6 to the away team's points
+    adds 6 to the away team's points;
+    allows user to choose the touchdown conversion's result;
+    returns function updating conversion data
     '''
     state.away_score = state.away_score + 6
     return Page(state, [
@@ -1176,7 +1253,9 @@ def away_touchdown_2(state: State) -> Page:
 @route
 def home_touchdown_2(state: State) -> Page:
     '''
-    adds 6 to the home team's points
+    adds 6 to the home team's points;
+    allows user to choose the touchdown conversion's result;
+    returns function updating conversion data
     '''
     state.home_score = state.home_score + 6
     return Page(state, [
@@ -1189,7 +1268,9 @@ def home_touchdown_2(state: State) -> Page:
 @route
 def away_touchdown_OT(state: State) -> Page:
     '''
-    adds 6 to the away team's points
+    adds 6 to the away team's points;
+    allows user to choose the touchdown conversion's result;
+    returns function updating conversion data
     '''
     state.away_score = state.away_score + 6
     return Page(state, [
@@ -1202,7 +1283,9 @@ def away_touchdown_OT(state: State) -> Page:
 @route
 def home_touchdown_OT(state: State) -> Page:
     '''
-    adds 6 to the home team's points
+    adds 6 to the home team's points;
+    allows user to choose the touchdown conversion's result;
+    returns function updating conversion data
     '''
     state.home_score = state.home_score + 6
     return Page(state, [
@@ -1215,8 +1298,8 @@ def home_touchdown_OT(state: State) -> Page:
 @route
 def away_fail(state: State) -> Page:
     '''
-    after touchdown, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after touchdown, updates touchdown conversion data to show that the away team failed a conversion,
+    returns home team's scorekeeper
     '''
     state.away_conversion_att += 1
     return home_scorekeeper(state)
@@ -1224,8 +1307,8 @@ def away_fail(state: State) -> Page:
 @route
 def home_fail(state: State) -> Page:
     '''
-    after touchdown, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after touchdown, updates touchdown conversion data to show that the home team failed a conversion,
+    returns away team's scorekeeper
     '''
     state.home_conversion_att += 1
     return away_scorekeeper(state)
@@ -1233,8 +1316,8 @@ def home_fail(state: State) -> Page:
 @route
 def away_fail_2(state: State) -> Page:
     '''
-    after touchdown, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after touchdown, updates touchdown conversion data to show that the away team failed a conversion,
+    returns home team's scorekeeper
     '''
     state.away_conversion_att += 1
     return home_scorekeeper_2(state)
@@ -1242,8 +1325,8 @@ def away_fail_2(state: State) -> Page:
 @route
 def home_fail_2(state: State) -> Page:
     '''
-    after touchdown, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after touchdown, updates touchdown conversion data to show that the home team failed a conversion,
+    returns away team's scorekeeper
     '''
     state.home_conversion_att += 1
     return away_scorekeeper_2(state)
@@ -1251,8 +1334,8 @@ def home_fail_2(state: State) -> Page:
 @route
 def away_fail_OT(state: State) -> Page:
     '''
-    after touchdown, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after touchdown, updates touchdown conversion data to show that the away team failed a conversion,
+    returns home team's scorekeeper
     '''
     state.away_conversion_att += 1
     return home_overtime(state)
@@ -1260,8 +1343,8 @@ def away_fail_OT(state: State) -> Page:
 @route
 def home_fail_OT(state: State) -> Page:
     '''
-    after touchdown, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after touchdown, updates touchdown conversion data to show that the home team failed a conversion,
+    returns away team's scorekeeper
     '''
     state.home_conversion_att += 1
     return away_overtime(state)
@@ -1269,8 +1352,8 @@ def home_fail_OT(state: State) -> Page:
 @route
 def away_field_goal_page(state: State) -> Page:
     '''
-    presents user with choice of team making or failing field goal, updates field goal attempt count;
-    returns other team's scorekeeper
+    presents user with choice of away team making or failing field goal, updates field goal attempt count;
+    returns a function that either updates the field goals made count, or the home team's scorekeeper
     '''
     state.away_field_goal_att += 1
     return Page(state,[
@@ -1282,8 +1365,8 @@ def away_field_goal_page(state: State) -> Page:
 @route
 def home_field_goal_page(state: State) -> Page:
     '''
-    presents user with choice of team making or failing field goal, updates field goal attempt count;
-    returns other team's scorekeeper
+    presents user with choice of home team making or failing field goal, updates field goal attempt count;
+    returns a function that either updates the field goals made count, or the away team's scorekeeper
     '''
     state.home_field_goal_att += 1
     return Page(state,[
@@ -1295,8 +1378,8 @@ def home_field_goal_page(state: State) -> Page:
 @route
 def away_field_goal_page_2(state: State) -> Page:
     '''
-    presents user with choice of team making or failing field goal, updates field goal attempt count;
-    returns other team's scorekeeper
+    presents user with choice of away team making or failing field goal, updates field goal attempt count;
+    returns a function that either updates the field goals made count, or the home team's scorekeeper
     '''
     state.away_field_goal_att += 1
     return Page(state,[
@@ -1308,8 +1391,8 @@ def away_field_goal_page_2(state: State) -> Page:
 @route
 def home_field_goal_page_2(state: State) -> Page:
     '''
-    presents user with choice of team making or failing field goal, updates field goal attempt count;
-    returns other team's scorekeeper
+    presents user with choice of home team making or failing field goal, updates field goal attempt count;
+    returns a function that either updates the field goals made count, or the away team's scorekeeper
     '''
     state.home_field_goal_att += 1
     return Page(state,[
@@ -1321,8 +1404,8 @@ def home_field_goal_page_2(state: State) -> Page:
 @route
 def away_field_goal_page_OT(state: State) -> Page:
     '''
-    presents user with choice of team making or failing field goal, updates field goal attempt count;
-    returns other team's scorekeeper
+    presents user with choice of away team making or failing field goal, updates field goal attempt count;
+    returns a function that either updates the field goals made count, or the home team's scorekeeper
     '''
     state.away_field_goal_att += 1
     return Page(state,[
@@ -1334,8 +1417,8 @@ def away_field_goal_page_OT(state: State) -> Page:
 @route
 def home_field_goal_page_OT(state: State) -> Page:
     '''
-    presents user with choice of team making or failing field goal, updates field goal attempt count;
-    returns other team's scorekeeper
+    presents user with choice of home team making or failing field goal, updates field goal attempt count;
+    returns a function that either updates the field goals made count, or the away team's scorekeeper
     '''
     state.home_field_goal_att += 1
     return Page(state,[
@@ -1347,8 +1430,8 @@ def home_field_goal_page_OT(state: State) -> Page:
 @route
 def away_field_goal(state: State) -> Page:
     '''
-    after user selects team to make a field goal, updates field goal data,
-    returns other team's scorekeeper
+    after user selects away team to make a field goal, updates field goal data,
+    returns home team's scorekeeper
     '''
     state.away_field_goal_made += 1
     state.away_score = state.away_score + 3
@@ -1357,8 +1440,8 @@ def away_field_goal(state: State) -> Page:
 @route
 def home_field_goal(state: State) -> Page:
     '''
-    after user selects team to make a field goal, updates field goal data,
-    returns other team's scorekeeper
+    after user selects home team to make a field goal, updates field goal data,
+    returns away team's scorekeeper
     '''
     state.home_field_goal_made += 1
     state.home_score = state.home_score + 3
@@ -1367,8 +1450,8 @@ def home_field_goal(state: State) -> Page:
 @route
 def away_field_goal_2(state: State) -> Page:
     '''
-    after user selects team to make a field goal, updates field goal data,
-    returns other team's scorekeeper
+    after user selects away team to make a field goal, updates field goal data,
+    returns home team's scorekeeper
     '''
     state.away_field_goal_made += 1
     state.away_score = state.away_score + 3
@@ -1377,8 +1460,8 @@ def away_field_goal_2(state: State) -> Page:
 @route
 def home_field_goal_2(state: State) -> Page:
     '''
-    after user selects team to make a field goal, updates field goal data,
-    returns other team's scorekeeper
+    after user selects home team to make a field goal, updates field goal data,
+    returns away team's scorekeeper
     '''
     state.home_field_goal_made += 1
     state.home_score = state.home_score + 3
@@ -1387,8 +1470,8 @@ def home_field_goal_2(state: State) -> Page:
 @route
 def away_field_goal_OT(state: State) -> Page:
     '''
-    after user selects team to make a field goal, updates field goal data,
-    returns other team's scorekeeper
+    after user selects away team to make a field goal, updates field goal data,
+    returns home team's scorekeeper
     '''
     state.away_field_goal_made += 1
     state.away_score = state.away_score + 3
@@ -1397,8 +1480,8 @@ def away_field_goal_OT(state: State) -> Page:
 @route
 def home_field_goal_OT(state: State) -> Page:
     '''
-    after user selects team to make a field goal, updates field goal data,
-    returns other team's scorekeeper
+    after user selects home team to make a field goal, updates field goal data,
+    returns away team's scorekeeper
     '''
     state.home_field_goal_made += 1
     state.home_score = state.home_score + 3
@@ -1407,8 +1490,10 @@ def home_field_goal_OT(state: State) -> Page:
 @route
 def away_two_points(state: State) -> Page:
     '''
-    after touchdown, gives team two points, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after user selects away team to convert 2 points after touchdown: 
+    gives away team two points, 
+    updates touchdown conversion data;
+    returns home team's scorekeeper
     '''
     state.away_score = state.away_score + 2
     state.away_conversion_att += 1
@@ -1418,8 +1503,10 @@ def away_two_points(state: State) -> Page:
 @route
 def home_two_points(state: State) -> Page:
     '''
-    after touchdown, gives team two points, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after user selects home team to convert 2 points after touchdown: 
+    gives home team two points, 
+    updates touchdown conversion data;
+    returns away team's scorekeeper
     '''
     state.home_score = state.home_score + 2
     state.home_conversion_att += 1
@@ -1429,8 +1516,10 @@ def home_two_points(state: State) -> Page:
 @route
 def away_two_points_2(state: State) -> Page:
     '''
-    after touchdown, gives team two points, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after user selects away team to convert 2 points after touchdown: 
+    gives away team two points, 
+    updates touchdown conversion data;
+    returns home team's scorekeeper
     '''
     state.away_score = state.away_score + 2
     state.away_conversion_att += 1
@@ -1440,8 +1529,10 @@ def away_two_points_2(state: State) -> Page:
 @route
 def home_two_points_2(state: State) -> Page:
     '''
-    after touchdown, gives team two points, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after user selects home team to convert 2 points after touchdown: 
+    gives home team two points, 
+    updates touchdown conversion data;
+    returns away team's scorekeeper
     '''
     state.home_score = state.home_score + 2
     state.home_conversion_att += 1
@@ -1451,8 +1542,10 @@ def home_two_points_2(state: State) -> Page:
 @route
 def away_two_points_OT(state: State) -> Page:
     '''
-    after touchdown, gives team two points, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after user selects away team to convert 2 points after touchdown: 
+    gives away team two points, 
+    updates touchdown conversion data;
+    returns home team's scorekeeper
     '''
     state.away_score = state.away_score + 2
     state.away_conversion_att += 1
@@ -1462,8 +1555,10 @@ def away_two_points_OT(state: State) -> Page:
 @route
 def home_two_points_OT(state: State) -> Page:
     '''
-    after touchdown, gives team two points, updates touchdown conversion data,
-    returns other team's scorekeeper
+    after user selects home team to convert 2 points after touchdown: 
+    gives home team two points, 
+    updates touchdown conversion data;
+    returns away team's scorekeeper
     '''
     state.home_score = state.home_score + 2
     state.home_conversion_att += 1
@@ -1473,7 +1568,8 @@ def home_two_points_OT(state: State) -> Page:
 @route
 def away_safety(state: State) -> Page:
     '''
-    awards other team two points and gives them ball
+    awards away team two points;
+    returns away team's scorekeeper
     '''
     state.away_score = state.away_score + 2
     return away_scorekeeper(state)
@@ -1481,7 +1577,8 @@ def away_safety(state: State) -> Page:
 @route
 def home_safety(state: State) -> Page:
     '''
-    awards other team two points and gives them ball
+    awards home team two points;
+    returns home team's scorekeeper
     '''
     state.home_score = state.home_score + 2
     return home_scorekeeper(state)
@@ -1489,7 +1586,8 @@ def home_safety(state: State) -> Page:
 @route
 def away_safety_2(state: State) -> Page:
     '''
-    awards other team two points and gives them ball
+    awards away team two points;
+    returns away team's scorekeeper
     '''
     state.away_score = state.away_score + 2
     return away_scorekeeper_2(state)
@@ -1497,7 +1595,8 @@ def away_safety_2(state: State) -> Page:
 @route
 def home_safety_2(state: State) -> Page:
     '''
-    awards other team two points and gives them ball
+    awards home team two points;
+    returns home team's scorekeeper
     '''
     state.home_score = state.home_score + 2
     return home_scorekeeper_2(state)
@@ -1505,7 +1604,8 @@ def home_safety_2(state: State) -> Page:
 @route
 def away_safety_OT(state: State) -> Page:
     '''
-    awards other team two points and gives them ball
+    awards away team two points;
+    returns away team's scorekeeper
     '''
     state.away_score = state.away_score + 2
     return away_overtime(state)
@@ -1513,7 +1613,8 @@ def away_safety_OT(state: State) -> Page:
 @route
 def home_safety_OT(state: State) -> Page:
     '''
-    awards other team two points and gives them ball
+    awards home team two points;
+    returns home team's scorekeeper
     '''
     state.home_score = state.home_score + 2
     return home_overtime(state)
@@ -1522,8 +1623,10 @@ def home_safety_OT(state: State) -> Page:
 @route
 def away_one_point(state: State) -> Page:
     '''
-    after touchdown, awards team 1 point, updates touchdown conversion data;
-    gives other team ball
+    after touchdown, user selects away team to convert one point:
+    gives away team one point,
+    updates touchdown conversion data;
+    returns home team's scorekeeper
     '''
     state.away_score = state.away_score + 1
     state.away_conversion_att += 1
@@ -1533,8 +1636,10 @@ def away_one_point(state: State) -> Page:
 @route
 def home_one_point(state: State) -> Page:
     '''
-    after touchdown, awards team 1 point, updates touchdown conversion data;
-    gives other team ball
+    after touchdown, user selects home team to convert one point:
+    gives home team one point,
+    updates touchdown conversion data;
+    returns away team's scorekeeper
     '''
     state.home_score = state.home_score + 1
     state.home_conversion_att += 1
@@ -1544,8 +1649,10 @@ def home_one_point(state: State) -> Page:
 @route
 def away_one_point_2(state: State) -> Page:
     '''
-    after touchdown, awards team 1 point, updates touchdown conversion data;
-    gives other team ball
+    after touchdown, user selects away team to convert one point:
+    gives away team one point,
+    updates touchdown conversion data;
+    returns home team's scorekeeper
     '''
     state.away_score = state.away_score + 1
     state.away_conversion_att += 1
@@ -1555,8 +1662,10 @@ def away_one_point_2(state: State) -> Page:
 @route
 def home_one_point_2(state: State) -> Page:
     '''
-    after touchdown, awards team 1 point, updates touchdown conversion data;
-    gives other team ball
+    after touchdown, user selects home team to convert one point:
+    gives home team one point,
+    updates touchdown conversion data;
+    returns away team's scorekeeper
     '''
     state.home_score = state.home_score + 1
     state.home_conversion_att += 1
@@ -1566,8 +1675,10 @@ def home_one_point_2(state: State) -> Page:
 @route
 def away_one_point_OT(state: State) -> Page:
     '''
-    after touchdown, awards team 1 point, updates touchdown conversion data;
-    gives other team ball
+    after touchdown, user selects away team to convert one point:
+    gives away team one point,
+    updates touchdown conversion data;
+    returns home team's scorekeeper
     '''
     state.away_score = state.away_score + 1
     state.away_conversion_att += 1
@@ -1577,8 +1688,10 @@ def away_one_point_OT(state: State) -> Page:
 @route
 def home_one_point_OT(state: State) -> Page:
     '''
-    after touchdown, awards team 1 point, updates touchdown conversion data;
-    gives other team ball
+    after touchdown, user selects home team to convert one point:
+    gives home team one point,
+    updates touchdown conversion data;
+    returns away team's scorekeeper
     '''
     state.home_score = state.home_score + 1
     state.home_conversion_att += 1
@@ -1588,7 +1701,8 @@ def home_one_point_OT(state: State) -> Page:
 @route
 def away_punt(state: State) -> Page:
     '''
-    gives ball to the other team and updates the punt count
+    updates away team punt total:
+    returns home team's scorekeeper
     '''
     state.away_punt += 1
     return home_scorekeeper(state)
@@ -1596,7 +1710,8 @@ def away_punt(state: State) -> Page:
 @route
 def home_punt(state: State) -> Page:
     '''
-    gives ball to the other team and updates the punt count
+    updates home team punt total:
+    returns away team's scorekeeper
     '''
     state.home_punt += 1
     return away_scorekeeper(state)
@@ -1604,7 +1719,8 @@ def home_punt(state: State) -> Page:
 @route
 def away_punt_2(state: State) -> Page:
     '''
-    gives ball to the other team and updates the punt count
+    updates away team punt total:
+    returns home team's scorekeeper
     '''
     state.away_punt += 1
     return home_scorekeeper_2(state)
@@ -1612,7 +1728,8 @@ def away_punt_2(state: State) -> Page:
 @route
 def home_punt_2(state: State) -> Page:
     '''
-    gives ball to the other team and updates the punt count
+    updates home team punt total:
+    returns away team's scorekeeper
     '''
     state.home_punt += 1
     return away_scorekeeper_2(state)
@@ -1620,7 +1737,8 @@ def home_punt_2(state: State) -> Page:
 @route
 def away_punt_OT(state: State) -> Page:
     '''
-    gives ball to the other team and updates the punt count
+    updates away team punt total:
+    returns home team's scorekeeper
     '''
     state.away_punt += 1
     return home_overtime(state)
@@ -1628,7 +1746,8 @@ def away_punt_OT(state: State) -> Page:
 @route
 def home_punt_OT(state: State) -> Page:
     '''
-    gives ball to the other team and updates the punt count
+    updates home team punt total:
+    returns away team's scorekeeper
     '''
     state.home_punt += 1
     return away_overtime(state)
@@ -1636,7 +1755,8 @@ def home_punt_OT(state: State) -> Page:
 @route
 def away_turnover(state: State) -> Page:
     '''
-    gives ball to the other team, and updates the turnover count
+    updates away team's turnover count;
+    returns home team's scorekeeper
     '''
     state.away_turnover += 1
     return home_scorekeeper(state)
@@ -1644,7 +1764,8 @@ def away_turnover(state: State) -> Page:
 @route
 def home_turnover(state: State) -> Page:
     '''
-    gives ball to the other team, and updates the turnover count
+    updates home team's turnover count;
+    returns away team's scorekeeper
     '''
     state.home_turnover += 1
     return away_scorekeeper(state)
@@ -1652,7 +1773,8 @@ def home_turnover(state: State) -> Page:
 @route
 def away_turnover_2(state: State) -> Page:
     '''
-    gives ball to the other team, and updates the turnover count
+    updates away team's turnover count;
+    returns home team's scorekeeper
     '''
     state.away_turnover += 1
     return home_scorekeeper_2(state)
@@ -1660,7 +1782,8 @@ def away_turnover_2(state: State) -> Page:
 @route
 def home_turnover_2(state: State) -> Page:
     '''
-    gives ball to the other team, and updates the turnover count
+    updates home team's turnover count;
+    returns away team's scorekeeper
     '''
     state.home_turnover += 1
     return away_scorekeeper_2(state)
@@ -1668,7 +1791,8 @@ def home_turnover_2(state: State) -> Page:
 @route
 def away_turnover_OT(state: State) -> Page:
     '''
-    gives ball to the other team, and updates the turnover count
+    updates away team's turnover count;
+    returns home team's scorekeeper
     '''
     state.away_turnover += 1
     return home_overtime(state)
@@ -1676,7 +1800,8 @@ def away_turnover_OT(state: State) -> Page:
 @route
 def home_turnover_OT(state: State) -> Page:
     '''
-    gives ball to the other team, and updates the turnover count
+    updates home team's turnover count;
+    returns away team's scorekeeper
     '''
     state.home_turnover += 1
     return away_overtime(state)
@@ -1684,42 +1809,42 @@ def home_turnover_OT(state: State) -> Page:
 @route
 def away_turnover_on_downs(state: State) -> Page:
     '''
-    gives other team the ball, not adding to turnover count
+    returns home team scorekeeper
     '''
     return home_scorekeeper(state)
 
 @route
 def home_turnover_on_downs(state: State) -> Page:
     '''
-    gives other team the ball, not adding to turnover count
+    returns away team scorekeeper
     '''
     return away_scorekeeper(state)
 
 @route
 def away_turnover_on_downs_2(state: State) -> Page:
     '''
-    gives other team the ball, not adding to turnover count
+    returns home team scorekeeper
     '''
     return home_scorekeeper_2(state)
 
 @route
 def home_turnover_on_downs_2(state: State) -> Page:
     '''
-    gives other team the ball, not adding to turnover count
+    returns away team scorekeeper
     '''
     return away_scorekeeper_2(state)
 
 @route
 def away_turnover_on_downs_OT(state: State) -> Page:
     '''
-    gives other team the ball, not adding to turnover count
+    returns home team scorekeeper
     '''
     return home_overtime(state)
 
 @route
 def home_turnover_on_downs_OT(state: State) -> Page:
     '''
-    gives other team the ball, not adding to turnover count
+    returns away team scorekeeper
     '''
     return away_overtime(state)
 
@@ -1727,7 +1852,8 @@ def home_turnover_on_downs_OT(state: State) -> Page:
 def halftime(state: State) -> Page:
     '''
     displays the game's score at halftime,
-    prompts the user to start 2nd half
+    prompts the user to start 2nd half;
+    returns second_half_ball function, which then sends user to the second half team's scorekeeper
     '''
     return Page(state,[
         "Halftime Score: ","\n",
@@ -1751,7 +1877,8 @@ def second_half_ball(state: State) -> Page:
 @route
 def overtime_cointoss(state: State) -> Page:
     '''
-    allows user to input which team wins the overtime cointoss
+    allows user to input which team wins the overtime cointoss;
+    returns scorekeeper of the team that the user selects
     '''
     if state.away_score != state.home_score:
         return final(state)
@@ -1765,7 +1892,8 @@ def overtime_cointoss(state: State) -> Page:
 @route
 def away_overtime(state: State) -> Page:
     '''
-    allows user to update away team's scores in overtime
+    allows user to update away team's scores in overtime;
+    returns function that updates team data, or the final screen
     '''
     return Page(state,[
         "Overtime!","\n",
@@ -1782,7 +1910,8 @@ def away_overtime(state: State) -> Page:
 @route
 def home_overtime(state: State) -> Page:
     '''
-    allows user to update home team's scores in overtime
+    allows user to update home team's scores in overtime;
+    returns function that updates team data, or the final screen
     '''
     return Page(state,[
         "Overtime!","\n",
@@ -1800,7 +1929,7 @@ def home_overtime(state: State) -> Page:
 def final(state: State) -> Page:
     '''
     uses data from the game to create a final score report and a stat sheet;
-    takes in all of the state variables,
+    takes in all of the state variables;
     returns Page with the data reformatted for viewing
     '''
     Score_list = [state.away_score,state.home_score] #list containing the two scores
